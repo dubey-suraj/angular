@@ -1,1 +1,28 @@
-<p>form works!</p>
+<div class="container">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="box">
+            <label for="name">name : </label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div class="box">
+            <label for="age">Age : </label>
+            <input type="text" id="age" formControlName="age">
+        </div>
+        <div class="box">
+            <label for="gender">Gender : </label>
+            <input type="text" id="gender" formControlName="gender">
+        </div>
+        <div class="box">
+            <label for="phone">Mobile No : </label>
+            <input type="number" id="phone" formControlName="phone">
+        </div>
+        <button class="btn">Save</button>
+    </form>
+    
+    <ul *ngFor="let item of data">
+        <li>{{item.name}}</li>
+        <li>{{item.age}}</li>
+        <li>{{item.gender}}</li>
+        <li>{{item.phone}}</li>
+    </ul>
+</div>
